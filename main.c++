@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
@@ -6,18 +5,18 @@
 
 using namespace std;
 typedef struct ChristmasTree {
-   struct ChristmasTree* left, * right;
-   int data;
-   int light = 0;
-   char letter[1000];
+   struct ChristmasTree* left, * right;//왼, 오른쪽 노드
+   int data;//번호
+   int light = 0;//편지가 있는지 없는지
+   char letter[1000];//편지
 };
 bool isFinish;
 int line, count;
-void Print(int line, ChristmasTree* root);
-ChristmasTree* CreateTree(int line);
-ChristmasTree* MakeNode(int data);
-ChristmasTree* Find(ChristmasTree* root, int data);
-void finish();
+void Print(int line, ChristmasTree* root);//트리 출력
+ChristmasTree* CreateTree(int line);//구조체 트리 구성
+ChristmasTree* MakeNode(int data);//노드 하나 만들기
+ChristmasTree* Find(ChristmasTree* root, int data);//원하는 숫자가 들어있는 노드의 위치 구하기
+void finish();//편지 입력을 끝내고 읽기전용으로 바꿀 떄
 
 int main() {
    
